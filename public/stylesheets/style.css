@@ -1,0 +1,43 @@
+.bottomMenu {
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    box-sizing: border-box;
+    padding: 3px;
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid #cdcdcd
+}
+
+.bottomMenu ul {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    padding: 0;
+    margin: 0
+}
+
+.bottomMenu ul li {
+    list-style: none;
+    width: 25%;
+    text-align: center
+}
+
+.bottomMenu ul li .am-icon-star {
+    position: relative;
+    top: -1px;
+}
+
+.bottomMenu ul li b {
+    display: block;
+    position: relative;
+    top: -5px;
+}
+
+body {
+    padding-bottom: 40px
+}
+
+.red {
+    color: red
+}

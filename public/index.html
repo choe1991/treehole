@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.min.js"></script>
+    <script src="js/vue.min.js"></script>
+</head>
+
+<body>
+
+
+    <div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0">
+
+        <ul class="am-slides">
+            <li><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" /></li>
+            <li><img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" /></li>
+        </ul>
+    </div>
+
+
+
+    <div data-am-widget="list_news" class="am-list-news am-list-news-default">
+        <!--列表标题-->
+        <div class="am-list-news-hd am-cf">
+            <!--带更多链接-->
+            <a href="###" class="">
+                <h2>栏目标题</h2>
+                <span class="am-list-news-more am-fr">更多 &raquo;</span>
+            </a>
+        </div>
+
+        <div class="am-list-news-bd">
+            <ul class="am-list" id="app">
+
+                <li class="am-g am-list-item-desced" v-for="item in lists">
+
+                    <img v-bind:src="item.headimg" width="30" height="30"> <small>{{item.name+'--'+item.zhName}}</small>
+
+                    <div class="am-list-item-text">我曹我哪里知道啊
+
+                    </div>
+                    <div class="am-list-item-text">
+                        <ul class="am-avg-sm-4 icon_lis">
+                            <li>
+                                <span class="am-icon-star">赞</span> <span class="am-badge am-round">1</span>
+                            </li>
+                            <li>
+                                <span class="am-icon-star">踩</span><span class="am-badge am-round am-badge-success">2</span>
+                            </li>
+                            <li>
+                                <span class="am-icon-star">留言</span><span class="am-badge am-round am-badge-danger">3</span>
+                            </li>
+                            <li>
+                                03-17 13:14
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+    <div id="loadMore">正在加载更多</div>
+    <div style="height: 10px;">
+
+    </div>
+    <div class="bottomMenu">
+        <ul>
+            <li class="red">
+                <div class="am-icon-star"></div>
+
+                <b>123</b>
+            </li>
+            <li>
+                <div class="am-icon-star"></div>
+
+                <b>123</b>
+            </li>
+            <li>
+                <div class="am-icon-star"></div>
+
+                <b>123</b>
+            </li>
+            <li>
+                <div class="am-icon-star"></div>
+
+                <b>123</b>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var pageindex = 1;
+        $(function() {
+            $('#loadMore').scrollspy({
+                animation: 'scale-up',
+                delay: 500
+            });
+            $('#demo-slider-0').flexslider({
+                playAfterPaused: 8000,
+                before: function(slider) {
+                    if (slider._pausedTimer) {
+                        window.clearTimeout(slider._pausedTimer);
+                        slider._pausedTimer = null;
+                    }
+                },
+                after: function(slider) {
+                        var pauseTime = slider.vars.playAfterPaused;
+                        if (pauseTime && !isNaN(pauseTime) && !slider.playing) {
+                            if (!slider.manualPause && !slider.manualPlay && !slider.stopped) {
+                                slider._pausedTimer = window.setTimeout(function() {
+                                    slider.play();
+                                }, pauseTime);
+                            }
+                        }
+                    }
+                    // 设置其他参数
+            });
+
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue!',
+                    lists: []
+                },
+                mounted: function() {
+                    var that = this;
+                    $.get("/article", {
+                        pageindex: pageindex
+                    }, function(data) {
+                        pageindex++;
+                        that.lists = data.datas;
+                        console.log(123123123123);
+
+                    });
+
+
+                },
+
+            })
+
+            $('#loadMore').on('inview.scrollspy.amui', function() {
+                $.get("/article", {
+                    pageindex: pageindex
+                }, function(data) {
+                    pageindex++;
+                    app.lists = app.lists.concat(data.datas);
+                });
+            }).on('outview.scrollspy.amui', function() {
+
+            });
+        });
+    </script>
+    <style>
+        #loadMore {
+            text-align: center;
+            color: #cdcdcd;
+            font-size: 13px;
+            line-height: 20px;
+        }
+        
+        .icon_lis li {
+            line-height: 23px;
+            padding-left: 10px;
+            padding-right: 10px;
+            box-sizing: border-box
+        }
+        
+        .icon_lis li:last-child {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    </style>
+</body>
+
+</html>
