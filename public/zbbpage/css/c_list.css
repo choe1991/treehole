@@ -1,0 +1,156 @@
+#bg {
+	margin: 0 auto;
+	display: block;
+}
+.gm{
+	height: 30px;
+	border-radius: 3px;
+}
+.wdx,.tcfs{
+	color: #cdcdcd;
+	font-size: 14px;
+	line-height: 42px;
+	height: 27px;
+	text-align: right;
+}
+.mission .qishu{
+	height: 22px;
+	font-size: 14px;
+	border: 1px solid #cdcdcd;
+	color: #999;
+	line-height: 22px;
+	width: 80px;
+	border-radius: 10px;
+}
+.tcfs{
+	line-height: 15px;
+}
+.sdsj,.ljgm{
+	height: 45px;
+	font-size: 16px;
+	line-height: 45px;
+	text-align: right;
+}
+.ljgm{
+	display: flex;
+	align-items: center;
+	text-align: right;
+	justify-content: center;
+}
+.btn{
+	width: 90%;
+	height: 30px;
+}
+.all{
+	text-align: center;
+	height: 17px;
+	line-height: 41px;
+}
+.all>span {
+	font-size: 10px;
+	color: #EC6D65;
+	-webkit-transition: color .8s;
+	transition: color .8s;
+}
+
+.all>span.unshine {
+	color: #666;
+}
+.gmrs{
+	line-height: 105px;
+	text-align: center;
+	height: 80px;
+}
+.ic_center .baozhang{
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #cdcdcd;
+	border-radius: 3px;
+	font-size: 14px;
+	text-align: center;
+}
+
+.item_content {
+	display: flex;
+	height:145px;
+}
+
+.item_content .ic_left {
+	width: 33%;
+}
+
+.item_content .ic_left .sss span {
+	line-height: 30px;
+}
+
+.item_content .ic_left .sss {
+	text-align: center;
+}
+
+.item_content .ic_left .sss .nhl {
+	font-size: 30px;
+	color: red;
+	font-family: arial;
+	line-height: 50px;
+}
+
+.item_content .ic_center {
+	width: 33%;
+}
+
+.item_content .ic_right {
+	width: 33%;
+}
+
+#c_content ul.index_list li {
+	width: 95%;
+	height: 200px;
+	border: 1px solid #cdcdcd;
+	background-color: white;
+	border-radius: 2%;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+ul,
+li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+p {
+	margin: 0 auto;
+}
+
+#c_head {
+	width: 100%;
+	height: 45px;
+	text-align: center;
+	line-height: 45px;
+	font-size: 20px;
+	background-color: white;
+}
+
+.item_head {
+	display: flex;
+	line-height: 40px;
+	height: 40px;
+	background-color: #F6C6C5;
+	border-bottom: 1px solid orangered;
+}
+
+.item_head .title,
+.item_head .nos,
+.item_head .mission {
+	width: 33%;
+	text-align: center;
+	display: flex;
+	flex-direction:row-reverse;
+	align-items: center;
+}

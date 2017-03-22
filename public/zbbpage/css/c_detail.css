@@ -1,0 +1,97 @@
+#c_content{
+	width: 95%;
+	margin: 0 auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.content_head{
+	border-bottom: #cdcdcd 1px solid;
+}
+.left_top{
+	display: flex;
+	border-bottom: #cdcdcd 1px solid;
+	height: 33px;
+	line-height: 30px;
+}
+.left_top .title{
+	font-size: 18px;
+	width: 30%;
+	text-align: center;
+	line-height: 35px;
+}
+.left_top .glyphicon{
+	font-size: 18px;
+	width: 5%;
+	position: relative;
+	top: 7px;
+}
+.left_top .xilie{
+	width: 35%;
+	line-height: 40px;
+	font-size: 15px;
+}
+.left_top .date{
+	width: 30%;
+	line-height: 43px;
+	font-size: 12px;
+	text-align: right;
+	color: #cdcdcd;
+}
+
+.content_head{
+	width: 100%;
+	display: flex;
+}
+.content_head .head_left{
+	width: 70%;
+}
+.content_head .head_right{
+	width: 30%;
+}
+.head_right canvas{
+	padding-left: 10px;
+}
+
+.p1,.p2{
+	display: flex;
+	font-size: 12px;
+	line-height: 30px;
+}
+
+.p2 div{
+	width: 50%;
+}
+.tips1 span{
+	padding-left: 10px;
+	font-size: 24px;
+	color: coral;
+}
+.p1 .tips1{
+	width: 50%;
+}
+.p1 .tips2{
+	width: 25%;
+}
+.p1 .tips3{
+	width: 25%;
+	text-align: right;
+}
+.menus{
+	display: flex;
+	border-bottom: 1px solid #cdcdcd;
+}
+ul.menus li{
+	width: 25%;
+	text-align: center;
+	line-height: 40px;
+	font-size: 18px;
+}
+
+ul.menus li.selected{
+	color: coral;
+	border-bottom: 3px solid coral;
+}
+.detail_content p{
+	margin: 0 0 1px;
+	color: #999;
+}

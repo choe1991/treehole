@@ -10,6 +10,7 @@ var users = require('./routes/users');
 var login = require('./routes/login');
 var article = require('./routes/article');
 var wechat = require('./routes/wechat');
+var wx = require('./routes/wx');
 var app = express();
 
 // view engine setup
@@ -29,6 +30,7 @@ app.use('/users', users);
 app.use('/login', login);
 app.use('/article', article);
 app.use('/wechat', wechat);
+app.use('/wx', wx);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -47,5 +49,12 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
+
+// //api handler
+// function extendApiOutPut(req,res,next){
+//     res.apiSuccess = function(data){
+//         res.json()
+//     }
+// }
 
 module.exports = app;

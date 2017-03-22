@@ -1,0 +1,14 @@
+
+index.html——主页
+login.html——登录
+wjpwd.html -- 找回密码
+password.html -- 重置密码
+register.html——注册
+reglogin.html -- 设置登录密码
+certification.html -- 实名认证
+successcation.html -- 用户注册信息
+successqr.html -- 用户注册成功
+agreement.html-- 用户协议
+list.html——资产列表
+detail.html——资产详情
+

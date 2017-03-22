@@ -5,9 +5,17 @@ var express = require('express');
 var router = express.Router();
 var crypto = require('crypto');
 var API = require('wechat-api');
+var request = require('request');
+var WechatAPI = require('wechat-api');
 
-
-
+var config = {
+    token: 'chengzhichao',
+    appid: 'wx1d3399f54b3d8bf0',
+    appsecret: '75eea3ccf6db3c5a07478aff036bc22a',
+    encodingAESKey: 'raS0qTDmvC4Uo7cSnWH4myFJQfs1embZoeQLEUkDYcF',
+    checkSignature: false
+};
+var api = new WechatAPI(config.appid, config.appsecret);
 /* 微信接入验证模块 */
 router.get('/', function(req, res, next) {
     var signature = req.query.signature;
@@ -31,31 +39,41 @@ router.get('/', function(req, res, next) {
  */
 var wxinfo = {
     appid: 'wx1d3399f54b3d8bf0',
-    appsecret: '75eea3ccf6db3c5a07478aff036bc22a',
-    tokenTime: 0,
-    token: ''
+    appsecret: '75eea3ccf6db3c5a07478aff036bc22a'
 };
 
 router.get('/test', function(req, res, next) {
 
-    var api = new API(wxinfo.appid, wxinfo.appsecret);
     var menu = {
         "button": [{
-                "type": "click",
-                "name": "正在开发",
-                "key": "V1001_TODAY_MUSIC"
-            },
-            {
-                "name": "稍后精彩",
+                "name": "个人中心",
                 "sub_button": [{
-                        "type": "view",
-                        "name": "PC站",
-                        "url": "http://www.zhubaby.com/"
+                        "type": "click",
+                        "name": "绑定账号",
+                        "key": "M1"
                     },
                     {
                         "type": "click",
-                        "name": "测试中",
-                        "key": "V1001_GOOD"
+                        "name": "立即进入",
+                        "key": "M2"
+                    }
+                ]
+            }, {
+                "type": "click",
+                "name": "投资理财",
+                "key": "M3"
+            },
+            {
+                "name": "其他信息",
+                "sub_button": [{
+                        "type": "click",
+                        "name": "关于我们",
+                        "key": "M4"
+                    },
+                    {
+                        "type": "click",
+                        "name": "实时车库",
+                        "key": "M5"
                     }
                 ]
             }
@@ -64,12 +82,46 @@ router.get('/test', function(req, res, next) {
 
     api.createMenu(menu, function(err, result) {
         if (err) {
-            console.log('报错');
+            res.send(err);
         } else {
-            console.log(result);
+            res.send(result);
         }
     });
 
 })
 
+
+
+router.get('/oauth', function(req, res, next) {
+    console.log("进入方法了");
+    var code = req.query.code;
+    var state = req.query.state;
+    var userinfo = {};
+    if (code) {
+        request("https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + config.appid + "&secret=" + config.appsecret + "&code=" + code + "&grant_type=authorization_code", function(error, response, body) {
+            var data = JSON.parse(body);
+            var openid = data.openid;
+            var access_token = data.access_token;
+            console.log(openid, access_token)
+            if (state == 2) {
+                request("https://api.weixin.qq.com/sns/userinfo?access_token=" + access_token + "&openid=" + openid + "&lang=zh_CN", function(error, response, body) {
+                    userinfo = JSON.parse(body);
+                    res.send(userinfo);
+                })
+            } else {
+                api.getUser(openid, function(err, result) {
+                    userinfo = result;
+                    res.send(userinfo);
+                });
+            }
+
+        });
+    } else {
+        console.log("请求获取到的结果??");
+        userinfo.errmsg = "用户取消授权了";
+        res.send(userinfo);
+    }
+
+
+});
 module.exports = router;

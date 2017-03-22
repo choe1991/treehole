@@ -1,0 +1,199 @@
+.clear {
+    clear: both;
+}
+	.login{
+		background-color: #FFFFFF;
+	}
+   .login .head {
+    width: 100%;
+    height: 50px;
+    line-height: 48px;
+    text-align: center;
+    z-index: 99;
+    background-color:#eb6d65;
+    
+}
+ .login .head span {
+    font-size: 20px;
+   color: #fff;
+}
+
+ .login .head .return {
+    text-align: center;
+    display: block;
+    position: absolute;
+    left: 20px;
+    z-index: 100;
+}
+ .login .head .return .am-icon-angle-left{
+    font-size: 30px;
+    color: #fff;
+}
+.login .con{
+   padding: 0 20px;
+}
+.login .con .num{
+    margin-top: 50px;
+    width: 100%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.8) ;
+}
+.login .con .num li{
+	width: 100%;
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid #999;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+
+.login .con .num .num_list .name{
+    display: inline-block;
+    border-right: 1px solid #999;
+    width: 20%;
+    text-align: left;
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+}
+.login .con .num .num_list .am-form-group{
+	  display: inline-block;
+	  width: 70%;
+      margin: 0;
+}
+
+.login .fill_num{
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: white;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+}
+.login .fill_num .fill{
+	float: left;
+	width: 60%;
+	 height: 45px;
+    line-height: 45px;
+    border: 1px solid #999;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+.login .fill_num .fill .name{
+    display: inline-block;
+    border-right: 1px solid #999;
+    width: 33%;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+}
+.login .con .num .fill-input{
+	 display: inline-block;
+    border: none ;
+    background: none;
+    font-size: 16px;
+    text-align: left;
+    height: 40px;
+    line-height: 40px;
+    width: 58%;
+}
+.login .fill_num .maneu input{
+    float: left;
+    height: 45px;
+    width: 25%;
+    border: none;
+    margin-left: 5px;
+    font-size: 13px ;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #717071;
+    border: 1px solid #c8c9ca;
+    background-color: #c8c9ca;
+}
+.login .fill_num .maneu input:hover{
+    float: left;
+    height: 45px;
+    width: 25%;
+    border: none;
+    margin-left: 5px;
+    font-size: 13px ;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    border: 1px solid #eb6d65;
+    background-color: #eb6d65;
+}
+.login .fill_num .maneubtn .sxbtn{
+    float: left;
+    height: 45px;
+    width: 11%;
+    border: none;
+    margin-left: 5px;
+    font-size: 14px ;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #717071;
+    border: 1px solid #c8c9ca;
+    background-color: #c8c9ca;
+}
+.login .fill_num .maneubtn .sxbtn:hover{
+    float: left;
+    height: 45px;
+    width: 11%;
+    border: none;
+    margin-left: 5px;
+    font-size: 14px ;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    border: 1px solid #eb6d65;
+    background-color: #eb6d65;
+}
+.login .fill_num .maneubtn .sxbtn .im{
+	margin: 0 auto; 
+	margin-top: 10px;
+}
+.login .con .lanch{
+    border: none;
+    width: 100%;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    background-color: #c8c9ca;
+    text-align: center;
+    font-size: 18px;
+    height: 45px;
+    line-height: 45px;
+    color: #717071;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.login .con .lanch:hover{
+    border: none;
+    width: 100%;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    border: 1px solid #eb6d65;
+    background-color: #eb6d65;
+    text-align: center;
+    font-size: 18px;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 20px;
+}
+.wj{width: 100%; margin-top: 10px;}
+.wj input{
+	width: 20px; height: 20px; display: inline-block; background: none;margin-right: 10px;
+}
+.wj .username{display: inline-block; font-size: 16px; vertical-align: middle; margin-right: 30px; color: #231815;}
+.wj .wjpwd{display: inline-block;vertical-align: middle;margin-right: 30px; font-size: 16px;}
+.wj .reg{display: inline-block;vertical-align: middle;  font-size: 16px; }

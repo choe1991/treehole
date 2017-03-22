@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="./js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>昵称:{{info.nickname}}</p>
+        <p>头像:<img v-bind:src="info.headimgurl" width="50" height="50">
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                info: {}
+            }
+
+        })
+
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+        $(function() {
+
+
+
+            var code = GetQueryString("code");
+            var state = GetQueryString("state");
+            $.get("/wx/oauth", {
+                code: code,
+                state: state
+            }, function(data) {
+                app.info = data
+            });
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <p><a v-bind:href="url1">静默授权</a></p>
+        <br>
+        <p><a v-bind:href="url2">用户授权</a></p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var url = encodeURI("http://cc.czcczc.cc/my.html");
+            console.log(url);
+            var app = new Vue({
+                el: '#box',
+                data: {
+                    url1: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1d3399f54b3d8bf0&redirect_uri=' + url + '&response_type=code&scope=snsapi_base&state=1#wechat_redirect',
+                    url2: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1d3399f54b3d8bf0&redirect_uri=' + url + '&response_type=code&scope=snsapi_userinfo&state=2#wechat_redirect'
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
