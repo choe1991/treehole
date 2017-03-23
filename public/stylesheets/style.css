@@ -41,3 +41,84 @@ body {
 .red {
     color: red
 }
+
+.am-g li {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+ul.am-g {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+@font-face {
+    font-family: "iconfont";
+    src: url('//at.alicdn.com/t/font_stxem8vza4gkqpvi.eot?t=1490246239387');
+    /* IE9*/
+    src: url('//at.alicdn.com/t/font_stxem8vza4gkqpvi.eot?t=1490246239387#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_stxem8vza4gkqpvi.woff?t=1490246239387') format('woff'), /* chrome, firefox */
+    url('//at.alicdn.com/t/font_stxem8vza4gkqpvi.ttf?t=1490246239387') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/font_stxem8vza4gkqpvi.svg?t=1490246239387#iconfont') format('svg');
+    /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-notebook:before {
+    content: "\e616";
+}
+
+.icon-pencil-ruler:before {
+    content: "\e617";
+}
+
+.icon-spray-paint:before {
+    content: "\e619";
+}
+
+.icon-screen-infinity:before {
+    content: "\e61a";
+}
+
+.icon-transform-tool-round:before {
+    content: "\e61b";
+}
+
+#loadMore {
+    text-align: center;
+    color: #cdcdcd;
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: -16px;
+}
+
+.icon_lis li {
+    line-height: 23px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    font-size: 12px
+}
+
+.icon_lis li:last-child {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.am-badge {
+    font-size: 10px;
+    margin-left: 2px;
+}
+
+.am-badge.am-round {
+    border-radius: 100%;
+}

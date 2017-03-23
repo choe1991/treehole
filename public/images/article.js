@@ -36,9 +36,10 @@ router.get('/', function(req, res, next) {
     } else {
         var pageindex = req.query.pageindex;
     }
+    console.log(111, req.query.pageindex);
     var startItem = (pageindex - 1) * 16;
 
-    db.query('select h.headimg,h.zhName,ta.content,ta.time,ta.userid from heros as h,treehole_article as ta,treehole_user as tu where ta.userid = tu.id and tu.heroid  = h.id ORDER BY ta.time DESC limit ' + startItem + ',16', function(err, rows) {
+    db.query('select h.headimg,h.zhName,ta.content,ta.time,ta.userid from heros as h,treehole_article as ta,treehole_user as tu where ta.userid = tu.id and tu.heroid  = h.id limit ' + startItem + ',16', function(err, rows) {
         if (err) {
             res.send({ title: 'heros', datas: [] });
         } else {

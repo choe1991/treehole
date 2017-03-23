@@ -10,6 +10,7 @@ var users = require('./routes/users');
 var login = require('./routes/login');
 var article = require('./routes/article');
 var wechat = require('./routes/wechat');
+var hero = require('./routes/hero');
 var wx = require('./routes/wx');
 var app = express();
 
@@ -22,7 +23,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser('czc'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
@@ -31,6 +32,7 @@ app.use('/login', login);
 app.use('/article', article);
 app.use('/wechat', wechat);
 app.use('/wx', wx);
+app.use('/hero', hero);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
