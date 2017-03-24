@@ -51,7 +51,7 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/add', function(req, res, next) {
-    res.redirect("/add.html");
+    res.redirect("/static/add.html");
 });
 
 router.post('/add', function(req, res, next) {

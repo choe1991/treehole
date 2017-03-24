@@ -6,7 +6,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.redirect("/login.html");
+    res.redirect("/static/login.html");
 });
 
 module.exports = router;

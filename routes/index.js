@@ -30,7 +30,7 @@ var mailOptions = {
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-    res.redirect('/index.html');
+    res.redirect("/static/index.html");
     //res.send("123");
 });
 
