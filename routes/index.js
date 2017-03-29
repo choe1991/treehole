@@ -29,8 +29,13 @@ var mailOptions = {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render("index", { title: "fuck" });
+    res.render("index", { title: "主页" });
 });
+
+router.get('/picker', function(req, res, next) {
+    res.render("picker", { title: "替身" });
+});
+
 
 
 // router.get("/mail", function(req, res, next) {

@@ -6,7 +6,11 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    res.render("login",{title:"登录"});
+    res.send("kokokokokokokokokokokokokokokokokok");
+});
+
+router.get('/aaa', function(req, res, next) {
+    res.send("aaa");
 });
 
 module.exports = router;

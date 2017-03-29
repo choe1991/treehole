@@ -7,11 +7,12 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var users = require('./routes/users.js');
 var login = require('./routes/login');
 var article = require('./routes/article');
 var wechat = require('./routes/wechat');
 var hero = require('./routes/hero');
+var test = require('./routes/test');
 var wx = require('./routes/wx');
 var app = express();
 
@@ -45,6 +46,8 @@ app.use('/article', article);
 app.use('/wechat', wechat);
 app.use('/wx', wx);
 app.use('/hero', hero);
+app.use('/ss', test);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
