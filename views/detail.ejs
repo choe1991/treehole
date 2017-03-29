@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<%include source.ejs%>
+<%include head.ejs%>
+<div class="am-g am-g-fixed blog-g-fixed" id="box">
+        <div class="am-u-md-8">
+            <article class="blog-main">
+                <h3 class="am-article-title blog-title">
+                    <a href="#">{{info.zhname}}</a>
+                </h3>
+                <h4 class="am-article-meta blog-meta">by <a href="">open</a> posted on {{info.time}}</h4>
+
+                <div class="am-g blog-content">
+                    <div class="am-u-lg-7">
+                        {{info.content}}
+                    </div>
+
+                </div>
+
+            </article>
+            <hr class="am-article-divider blog-hr">
+        </div>
+
+        <div class="am-u-md-4 blog-sidebar">
+            <div class="am-panel-group">
+                <textarea placeholder="请在此输入评论内容" v-model="content" style="width:100%;border:1px solid #cdcdcd; margin-bottom: 10px" rows="5" id="doc-ta-1"></textarea>
+                <div class="am-cf">
+
+                    <div class="am-fr col-sm-3" style="margin-bottom: 10px">
+                        <button class="am-btn am-btn-primary" @click="dopost">
+                            提交<i class="am-icon-cloud-download"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <article class="am-comment" v-for="item in list">
+                    <a href="#link-to-user-home">
+                        <img :src="item.headimg" alt="" class="am-comment-avatar" width="48" height="48" />
+                    </a>
+
+                    <div class="am-comment-main">
+                        <header class="am-comment-hd">
+                            <!--<h3 class="am-comment-title">评论标题</h3>-->
+                            <div class="am-comment-meta">
+                                <a href="#link-to-user" class="am-comment-author" v-text="item.zhname"></a> 评论于 <span v-text="item.time"></span>
+                            </div>
+                        </header>
+
+                        <div class="am-comment-bd" v-text="item.content">
+
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+    </div>
+<%include foot.ejs%>
+<script>
+    function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+        var article_id = GetQueryString("article_id")
+        var vue = new Vue({
+            el: "#box",
+            data: {
+                info: {},
+                list: [],
+                content: ""
+            },
+            methods: {
+                dopost: function() {
+                    var that = this;
+                    $.post(
+                        "/article/addComment", {
+                            article_id: article_id,
+                            content: that.content
+                        },
+                        function(data) {
+                            console.log(data);
+                            if (data.result == 0) {
+                                alert("保存成功");
+                                $.get(
+                                    "/article/getComments", {
+                                        article_id: article_id
+                                    },
+                                    function(data1) {
+                                        that.list = data1.result;
+                                    }
+                                );
+                            } else {
+                                alert("保存失败");
+                            }
+                        }
+                    );
+                }
+            },
+            mounted: function() {
+                var that = this;
+                $.get(
+                    "/article/view", {
+                        article_id: article_id
+                    },
+                    function(data) {
+                        console.log(data.result[0]);
+                        that.info = data.result[0];
+                        $.get(
+                            "/article/getComments", {
+                                article_id: article_id
+                            },
+                            function(data1) {
+                                that.list = data1.result;
+                            }
+                        );
+                    }
+                );
+
+
+            }
+        });
+    </script>
+</html>
+
+

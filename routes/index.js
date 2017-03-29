@@ -29,9 +29,7 @@ var mailOptions = {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
-    res.redirect("/static/index.html");
-    //res.send("123");
+    res.render("index", { title: "fuck" });
 });
 
 

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<%include source.ejs%>
+<%include head.ejs%>
+<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+
+        <div class="am-list-news-bd">
+            <ul class="am-list" id="app">
+
+                <li class="am-g am-list-item-desced" v-for="item in lists" v-on:click="view(item.id)">
+                    <div>
+                        <img v-bind:src="item.headimg" width="30" height="30"> <small>{{item.zhName}}</small>
+                        <span style="float: right;
+    font-size: 12px;
+    color: #cdcdcd;
+    line-height: 27px;"> {{item.time}}</span>
+                    </div>
+                    <div class="am-list-item-text">{{item.content}}
+
+                    </div>
+                    <div class="am-list-item-text">
+                        <ul class="am-g icon_lis">
+                            <li class="am-u-sm-4" v-on:click="like(item.id)">
+                                <small>赞</small> <span :id="'atc'+item.id" class="am-badge am-round am-badge-primary am-text-sm">1</span>
+                            </li>
+
+                            <li class="am-u-sm-4">
+                                <small>阅</small> <span class="am-badge am-round am-text-sm">3</span>
+                            </li>
+                            <li class="am-u-sm-4">
+                                <small>言</small><span class="am-badge am-round am-badge-danger am-text-sm">3</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="loadMore">正在加载更多</div>
+<%include foot.ejs%>
+<script>
+        var pageindex = 1;
+        $(function() {
+            $('#loadMore').scrollspy({
+                animation: 'scale-up',
+                delay: 500
+            });
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue!',
+                    lists: []
+                },
+                mounted: function() {
+                    var that = this;
+                    $.get("/article", {
+                        pageindex: pageindex
+                    }, function(data) {
+                        pageindex++;
+                        that.lists = data.datas;
+                    });
+                },
+                methods: {
+                    like: function(articleid) {
+                        var e = event.target;
+                        $.post("/article/like", {
+                                article_id: articleid,
+                            },
+                            function(data) {
+                                if (data.result == 0) {
+                                    alert("点赞成功");
+                                    var likes = $("#atc" + articleid).text();
+                                    var num = Number(likes) + 1;
+                                    $("#atc" + articleid).text(num);
+                                } else {
+                                    alert("点赞失败");
+                                }
+                            });
+                    },
+                    view: function(articleid) {
+                        window.location = "/static/detail.html?article_id=" + articleid
+                    }
+                }
+
+            })
+
+            $('#loadMore').on('inview.scrollspy.amui', function() {
+                $.get("/article", {
+                    pageindex: pageindex
+                }, function(data) {
+                    if (data.datas.length != 0) {
+                        pageindex++;
+                        app.lists = app.lists.concat(data.datas);
+                    } else {
+                        $("#loadMore").text("已经到最后一页了哦");
+                    }
+                });
+            })
+        });
+    </script>
+</html>
+
+

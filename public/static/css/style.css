@@ -122,3 +122,9 @@ ul.am-g {
 .am-badge.am-round {
     border-radius: 100%;
 }
+
+.tophead {
+    float: right;
+    line-height: 49px;
+    padding-right: 14px;
+}

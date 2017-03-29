@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<%include source.ejs%>
+<%include head.ejs%>
+<div class="am-form" id="box">
+        <fieldset>
+            <legend>发布主题</legend>
+            <div class="am-form-group">
+                <label for="doc-ta-1">心声</label>
+                <textarea class="" name="content" rows="5" placeholder="用心描述你的内心..." id="doc-ta-1" v-model="msg"></textarea>
+            </div>
+
+            <p><button type="submit" v-on:click="dopost()" class="am-btn am-btn-default">提交</button></p>
+        </fieldset>
+    </div>
+<%include foot.ejs%>
+<script>
+    window.onload = function() {
+    var vue = new Vue({
+        el: "#box",
+        data: {
+            msg: ""
+        },
+        methods: {
+            dopost: function() {
+                var that = this;
+                console.log(this.msg);
+                if (that.msg == "") {
+                    alert("输入内容才能提交哦");
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: "/article/add",
+                        data: {
+                            content: that.msg
+                        },
+                        success: function(res) {
+                            window.location = "/"
+                        }
+                    });
+                }
+
+            }
+        }
+    })
+}
+    </script>
+</html>
+
+
