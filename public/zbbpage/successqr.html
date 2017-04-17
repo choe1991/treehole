@@ -28,12 +28,13 @@
   <!-- windows phone 点击无高光 -->
   <meta name="msapplication-tap-highlight" content="no">
 
-	<title>猪宝宝-个人注册</title>
+	<title>个人注册</title>
 	<link rel="stylesheet" type="text/css" href="css/amazeui.css">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/login.css" rel="stylesheet">
 	<link href="css/index.css" rel="stylesheet">
 	<link href="css/reg.css" rel="stylesheet">
+	<link href="css/c_list.css" rel="stylesheet">
 </head>
 
 <body class="scope">
@@ -42,7 +43,7 @@
       <nav class="header">
       	<!--<div class="top"></div>-->
       	  <div class="head">
-                 <a class="return" href="#"><i class="am-icon-angle-left"></i></a>
+                 <a class="return" href="#" onclick="history.go(-1)"><i class="am-icon-angle-left"></i></a>
                  <span>个人注册</span>
             </div>
       </nav>
@@ -73,20 +74,33 @@
       	</div>
       	
       </div>
-        <div class="regcon" style="padding: 0 30px;">
-                <div class="succes-title">恭喜您注册P2P用户成功！</div>
-                <div style="width: 100%; text-align: center;">
-                	<input type="submit" class="lanchqr" value="确认"/>
-                </div>
-        </div>
+        <div class="Explain">
+				<img src="img/succesbg.jpg" class="se-lose"/>
+		</div>
+		<p style="text-align: center;color: #595757;">恭喜您注册成功</p>
+		<div class="detail-lj">
+				<div class="wrp" onclick="javascript:window.location.href='recharge.html'">
+					<div class="btn">充值</div>
+     		  </div>
+		</div>
+		<div class="detail-lj">
+				<div class="wrp" onclick="javascript:window.location.href='myaccount.html'">
+					<div class="btn">我的账户</div>
+     		  </div>
+		</div>
+		<div class="detail-lj">
+				<div class="wrp" onclick="javascript:window.location.href='index.html'">
+					<div class="btn">返回首页</div>
+     		  </div>
+		</div>
 </div>
 <!--底部 start-->
 	<footer class="footer">
         <nav>
             <ul>
-                <li><a href="index.html" class="nav-controller active"><div class="fb-home"></div>主页</a></li>
+                <li><a href="index.html" class="nav-controller"><div class="fb-home"></div>主页</a></li>
                 <li><a href="list.html" class="nav-controller"><div class="fb-group"></div>优质资产</a></li>
-                <li class="left"><a href="login.html" class="nav-controller "><div class="fb-list"></div>我的账户</a></li>
+                <li class="left"><a href="login.html" class="nav-controller active"><div class="fb-list"></div>我的账户</a></li>
             </ul>
         </nav>
     </footer>

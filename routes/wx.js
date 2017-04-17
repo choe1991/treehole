@@ -59,9 +59,9 @@ router.get('/test', function(req, res, next) {
                     }
                 ]
             }, {
-                "type": "click",
+                "type": "view",
                 "name": "投资理财",
-                "key": "M3"
+                "url": "http://yc.czcczc.cc/wis18/wx/index"
             },
             {
                 "name": "其他信息",

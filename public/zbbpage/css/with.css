@@ -1,0 +1,68 @@
+#set_data{
+         margin-top: 20px;
+        margin-bottom: 65px;
+}
+#set_data .fill_word{
+    width: 100%;
+    padding: 0 10px;
+}
+#set_data .fill_word li{
+    width: 100%;
+    background-color: white;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+#set_data .fill_word li:last-child{
+    border: none;
+}
+#set_data .fill_word li span{
+	color: #595757;
+    float: left;
+    font-size: 14px;
+}
+#set_data .fill_word li .am-form-group .s-input{
+    float: right;
+    height: 40px;
+    width: 80%;
+    border:1px solid #888888;
+    border-radius: 5px;
+    color: #231815;
+    padding-left: 10px;
+    font-size: 14px;
+    background-color: transparent;
+}
+.ye{
+	color: #595757; font-size: 20px; text-align: center; clear: both;
+}
+.yes {
+    border: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #eb6d65;
+    color: white;
+    font-size: 18px;
+      border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    margin: 30px auto;
+}
+.wxts{
+	padding: 20px;
+	margin-top: 40px;
+	border: 1px dashed #717071;
+	color: #717071;
+}
+.tx{
+	padding: 0 10px;
+}
+.tx span{
+	color: #595757;
+}
+.tx span .inp{
+	width: 12px;
+    height: 12px;
+    margin: 0 9px;
+}

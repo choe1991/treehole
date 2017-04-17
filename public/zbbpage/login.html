@@ -28,11 +28,12 @@
   <!-- windows phone 点击无高光 -->
   <meta name="msapplication-tap-highlight" content="no">
 
-	<title>猪宝宝-登录</title>
+	<title>登录</title>
 	<link rel="stylesheet" type="text/css" href="css/amazeui.css">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/login.css" rel="stylesheet">
 	<link href="css/index.css" rel="stylesheet">
+	<link href="css/c_list.css" rel="stylesheet">
 </head>
 
 <body class="scope">
@@ -41,7 +42,7 @@
       <nav class="header">
       <!--	<div class="top"></div>-->
       	  <div class="head">
-                 <a class="return" href="#"><i class="am-icon-angle-left"></i></a>
+                
                  <span>登&nbsp;&nbsp;&nbsp;录</span>
             </div>
       </nav>
@@ -53,13 +54,14 @@
                          <div class="am-form-group">
                              <input type="text" placeholder="请输入用户名"/>
                          </div>
-                     
+                      <p class="clear fc">用户名输入错误</p>
                      </li>
                     <li class="num_list">
                          <span class="name">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</span>
                          <div class="am-form-group">
                              <input type="password" placeholder="请输入密码"/>
                          </div>
+                         <p class="clear fc">密码输入错误</p>
                      </li>
                      <div class="fill_num">
                     <div class="fill" class="am-form-group">
@@ -67,21 +69,24 @@
                         <input type="text" placeholder="请输入验证码" class="fill-input"/>
                     </div>
                     <div class="maneu" class="am-form-group">
-                        <input type="submit" value="获取验证码">
+                       <img src="img/loginVerify.jpg"/>
                     </div>
-                    <div class="maneubtn" class="am-form-group">
-                        <div class="sxbtn"><img src="img/sxbtn.png" width="20" height="20" class="im"/></div>
                     </div>
-                    <div class="clear"></div>
-                    </div>
+                    <p class="clear fc">请输入正确的验证码</p>
+                   
                  </ul>
-                 <input type="submit" class="lanch" value="立即登录"/>
+                 <!--<input type="submit" class="lanch" value="立即登录" onclick="javascript:window.location.href='myaccount.html'"/>-->
+                 <div class="detail-lj">
+				<div class="wrp" onclick="javascript:window.location.href='myaccount.html'">
+					<div class="btn">立即登录</div>
+     		  </div>
+			</div>
                  <div>
                  	<div class="wj">
                  		<input type="checkbox"/>
                  		<div class="username">记住用户名</div>
                  		<div class="wjpwd"><a href="wjpwd.html" style="color: #231815;font-size: 16px;">忘记密码</a></div>
-                 	    <div class="reg"><a href="register.html" style="color: #ed7700;font-size: 16px;">免费注册</a></div>
+                 	    <div class="reg"><a href="register.html" style="color: #eb6d65;font-size: 16px;">免费注册</a></div>
                  	</div>
                  	
                  </div>
@@ -91,9 +96,9 @@
 	<footer class="footer">
         <nav>
             <ul>
-                <li><a href="index.html" class="nav-controller active"><div class="fb-home"></div>主页</a></li>
+                <li><a href="index.html" class="nav-controller "><div class="fb-home"></div>主页</a></li>
                 <li><a href="list.html" class="nav-controller"><div class="fb-group"></div>优质资产</a></li>
-                <li class="left"><a href="login.html" class="nav-controller "><div class="fb-list"></div>我的账户</a></li>
+                <li class="left"><a href="login.html" class="nav-controller active"><div class="fb-list"></div>我的账户</a></li>
             </ul>
         </nav>
     </footer>

@@ -4,7 +4,7 @@ var pool = mysql.createPool({
     user: 'root',
     password: 'joker12345',
     database: 'har',
-    debug: true,
+    debug: false,
     dateStrings: true
 });
 

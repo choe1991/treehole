@@ -1,0 +1,222 @@
+		.account{
+			position: relative;
+	    	overflow: hidden;
+	    	margin-bottom: 65px;
+	    	color: #fff;
+	    	
+		}
+		.account .account-wrapper{  
+			position: relative;
+		    padding: 24px 12px 18px 24px;
+		    font-size: 0;
+		}
+		.account .account-wrapper .avatatr{
+			display: inline-block;
+    		vertical-align: top;
+		}
+		.account .account-wrapper .avatatr p{
+			font-size: 14px; color: #bcbdbd; line-height: 35px;
+		}
+		.account .account-wrapper .avatatr .sctp{
+			width: 77px;
+			height: 110px;
+			border: 1px dashed #7d7d7d;
+		}
+		.account .account-wrapper .avatatr .sctp img{
+			width: 52px;
+			/*height: 32px;*/
+			margin: 0 auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			display: block;
+		}
+		.account .account-wrapper .avatatr .sctp p{
+		    text-align: center;
+			font-size: 14px;
+			color: #7d7d7d;
+		}
+		.account .account-wrapper .content{
+			    display: inline-block;
+    			margin-left: 16px;
+		}
+		.account .account-wrapper .content .username{
+			margin: 2px 0 8px 0;
+		}
+		.account .account-wrapper .content .username .brand {
+		    display: inline-block;
+		    vertical-align: middle;
+		    width: 16px;
+		    height: 16px;
+		    background-image: url(../img/bz.png);
+		    background-size: 16px 16px;
+		    background-repeat: no-repeat;
+		    }
+		 .account .account-wrapper .content .username .name {
+		 	 display: inline-block;
+		    vertical-align: middle;
+		    margin-left: 6px;
+		    font-size: 16px;
+		    line-height: 18px;
+		    color: #7d7d7d;
+            }
+           .account .account-wrapper .content .totalmoney{
+            	margin-bottom: 10px;
+				line-height: 12px;
+            }
+            .account .account-wrapper .content .totalmoney .name{
+            	 display: inline-block;
+            	 font-size: 16px;
+		         line-height: 16px;
+		         color: #7d7d7d;
+            }
+           
+            .account .account-wrapper .content .balance{
+            	margin-bottom: 10px;
+				line-height: 12px;
+            }
+            .account .account-wrapper .content .balance .name{
+            	 display: inline-block;
+            	 font-size: 16px;
+		         line-height: 16px;
+		         color: #eb6d65;
+            }
+            .account .account-wrapper .content-money{
+			    display: inline-block;
+    			margin-left: 16px;
+    			text-align: right;
+		}
+             .account .account-wrapper .content-money .totalmoney{
+             	 margin-left: 30px;
+            	margin-bottom: 10px;
+				line-height: 12px;
+            }
+            .account .account-wrapper .content-money  .totalmoney .money{
+            	 font-size: 16px;
+		         line-height: 16px;
+		         color: #7d7d7d;
+            }
+             .account .account-wrapper .content-money .balance .money{
+            	 font-size: 16px;
+		         line-height: 16px;
+		         color: #eb6d65;
+            }
+            .cy {
+			    display: flex;
+			}
+			.cy .Grid-cell {
+			    border-right: 1px solid #7d7d7d;
+			    height: 20px;
+			     color: #7d7d7d;
+			    font-size: 14px;
+			    text-align: center;
+			    flex: 1;
+			}
+			.cy .Grid-cell .marjl{
+				margin-right: 20px;
+			}
+			 .cy-btn {
+			    display: flex;
+			    margin-top: 20px;
+			}
+			.cy-btn .Grid-btn {
+			    text-align: center;
+			    flex: 1;
+			}
+			.cy-btn .Grid-btn button{
+				width: 120px;
+				height: 35px;
+				border-radius: 10px;
+			}
+			.cy-btn .Grid-btn .btn1{
+				background-color: #FFF;
+				color:#7d7d7d;
+				border: 1px solid #7d7d7d;
+			}
+			.cy-btn .Grid-btn .btn2{
+				background-color: #eb6d65;
+				color:#fff;
+				border: 1px solid #eb6d65;
+			}
+			 .zc {
+			    display: flex;
+			    margin-top: 30px;
+			}
+			.zc .Grid-zc {
+			    text-align: center;
+			    flex: 1;
+			}
+			.zc .Grid-zc p{
+				font-size: 16px;
+				color:#7d7d7d;
+			}
+			 .table-xz {
+			    display: flex;
+			    margin-top: 30px;
+			}
+			.table-xz .xz-cell {
+				 color: #7d7d7d;
+			    font-size: 12px;
+			    text-align: center;
+			    flex: 1;
+			}
+			 .zc-link {
+			    display: flex;
+			}
+			.zc-link .Grid-link {
+			    text-align: center;
+			    border-top: 1px solid #c8c9ca;
+			    height: 45px;
+			    flex: 1;
+			}
+			.zc-link .Grid-link a{
+				display: block;
+				font-size: 18px;
+				line-height: 45px;
+				color:#7d7d7d;
+			}
+			.zc-link .Grid-link a:hover{
+				color:#eb6d65;
+			}
+			.zc-link .Grid-link a .icon-keyboard_arrow_right {
+			    margin-left: 20px;
+			    line-height: 24px;
+			    font-size: 10px;
+             }
+@media screen and (max-width: 319px) {
+  .account .account-wrapper {
+    padding: 24px 12px 18px 12px;
+  }
+  .account .account-wrapper .content {
+    margin-left: 12px;
+}
+.account .account-wrapper .content-money {
+    margin-left: 0;
+}
+ .account .account-wrapper .content .totalmoney .name,
+ .account .account-wrapper .content .totalmoney .name,
+ .account .account-wrapper .content .balance .name,
+ .account .account-wrapper .content-money  .totalmoney .money,
+ .account .account-wrapper .content-money .balance .money{
+            	 font-size: 15px;
+		         line-height: 15px;
+            }
+}
+@media screen and (min-width: 320px) and (max-width: 359px) {
+.account .account-wrapper {
+    padding: 24px 12px 18px 12px;
+  }
+  .account .account-wrapper .content {
+    margin-left: 12px;
+}
+.account .account-wrapper .content-money {
+    margin-left: 0;
+}
+.account .account-wrapper .content .totalmoney .name,
+ .account .account-wrapper .content .totalmoney .name,
+ .account .account-wrapper .content .balance .name,
+ .account .account-wrapper .content-money  .totalmoney .money,
+ .account .account-wrapper .content-money .balance .money{
+            	 font-size: 15px;
+		         line-height: 15px;
+            }
+}             

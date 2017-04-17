@@ -1,0 +1,31 @@
+.seTable th {
+    border-bottom: 1px solid #f7c7c6;
+    border-right: 4px solid #fff;
+    background-color: #f7c7c6;
+    font-weight: bold;
+}
+.seTable .ac{
+	border-bottom: 1px solid #e5dfe2;;
+    background-color: #e5dfe2;
+}
+.sx{
+	padding: 0;
+}
+.sx input{
+	color: #595757;
+	
+}
+select{
+	width: 160px;
+}
+.sx .sp{
+	color: #595757;
+	display: inline-block;
+	padding: 5px;
+	font-size: 16px;
+	text-align: right;
+	width: 122px;
+}
+.sx .inp{
+	border: 1px solid #aaabab;
+}

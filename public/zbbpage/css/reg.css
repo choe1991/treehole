@@ -1,5 +1,5 @@
 #user_center{
-	width: 100%; margin-top: 50px;
+	width: 100%; margin-top: 30px;
 }
 #user_center .line{
 	width: 100%; height: 2px; background: linear-gradient(90deg, #eb6d65 50%,  #717071 50%);
@@ -66,8 +66,8 @@
 }
  .regcon .num li{
 	width: 100%;
-    height: 45px;
-    line-height: 45px;
+    height: 40px;
+    line-height: 40px;
     border: none;
     margin-bottom: 30px;
 }
@@ -86,17 +86,18 @@
 	color: red;vertical-align: middle;
 }
 .regcon .num .num_list .am-form-group{
-	  display: inline-block;
+	  display: inline-block; 
 	  width: 70%;
       margin: 0;
       border: 1px solid #999;border-radius: 8px;
       
 }
+
 .regcon .num .num_list .am-form-group .tl{
+	    width: 100%;
 	padding-left: 10px;
 }
 .login .regfill_num{
-    margin-bottom: 10px;
     width: 100%;
     background-color: white;
     height: 50px;
@@ -107,10 +108,9 @@
 .login .regfill_num .fill{
 	    float: left;
     width: 67%;
-    height: 45px;
-    line-height: 45px;
+    height: 40px;
+    line-height: 40px;
     border: none;
-    margin-bottom: 30px;
 }
 .login .regfill_num .fill .name{
     display: inline-block;
@@ -130,16 +130,17 @@
     background: none;
     font-size: 16px;
     text-align: left;
-    height: 45px;
-    line-height: 45px;
+    height: 40px;
+    line-height: 40px;
     padding-left: 10px;
     width: 61%;
 }
 .login .regfill_num .maneu input{
    float: left;
-    height: 45px;
-    line-height: 45px;
+    height: 40px;
+    line-height: 40px;
     width: 25%;
+    margin-top: 2px;
     font-size: 13px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -150,8 +151,8 @@
 }
 .login .regfill_num .maneu input:hover{
     float: left;
-    height: 45px;
-    line-height: 45px;
+    height: 40px;
+    line-height: 40px;
     width: 25%;
     font-size: 13px;
     -webkit-border-radius: 5px;
@@ -170,10 +171,10 @@
     background-color: #c8c9ca;
     text-align: center;
     font-size: 18px;
-    height: 45px;
-    line-height: 45px;
+    height: 40px;
+    line-height: 40px;
     color: #717071;
-    margin-top: 20px;
+   /* margin-top: 20px;*/
     margin-bottom: 20px;
 }
 .login .regcon .lanch:hover{
@@ -187,18 +188,19 @@
     background-color: #eb6d65;
     text-align: center;
     font-size: 18px;
-    height: 45px;
-    line-height: 45px;
+    height: 40px;
+    line-height: 40px;
     margin-bottom: 20px;
 }
 .cert{
 	text-align: left;
+	
 }
 .cert .yd{
 	display: inline-block; width: 5px; height: 5px; background-color: #ed7700;border-radius: 50%; vertical-align: middle;
 }
 .cert .smname{
-	display: inline-block;color: #999; vertical-align: middle;
+	display: inline-block;color: #999; vertical-align: middle;font-size: 14px;
 }
 .mbottom{
 	 margin-bottom: 10px;
@@ -242,7 +244,7 @@
     width: 72%;
 }
 .login .regfill_num .fill .fill-input {
-    width: 57%;
+    width: 55%;
 }
 }
 

@@ -2,62 +2,114 @@ var bg = document.getElementById('jd');
 console.log(bg);
 var ctx = bg.getContext('2d');
 var pi = Math.PI;
+/**
+ * 
+ * @param {*} current 百分比
+ * @param {*} title 类别
+ * @param {*} name 标题
+ */
+function draw(current, title, name) {
 
-function draw(current) {
-	
-	ctx.font = '15px courier';
-	ctx.textBaseline = 'hanging';
-	ctx.fontWeight = "lighter";
-	var text1 = "进度:" + parseInt(current * 100) + "%";
-	ctx.textAlign = "center";
-	ctx.fillStyle = "#595757";
-	ctx.fillText(text1, 150, 50);
-	
-	ctx.stroke();
-	ctx.restore();
-	ctx.save();
+    //浅灰底色
+    ctx.beginPath();
+    ctx.strokeStyle = "#e6e6e7";
+    ctx.lineWidth = 20;
+    ctx.arc(150, 0, 100, pi, 0, true);
+    ctx.stroke();
+    ctx.restore();
+    ctx.save();
+    //画方框
+    ctx.beginPath();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "#ec6e65";
+    ctx.strokeRect(80, 18, 60, 18); /*绘制一个矩形，前两个参数决定开始位置，后两个分别是矩形的宽和高*/
+    ctx.stroke();
+    ctx.restore();
+    ctx.save();
+    //画类别
+    ctx.font = '13px courier';
+    ctx.textBaseline = 'hanging';
+    ctx.fontWeight = "lighter";
+    var title = title;
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#595757";
+    ctx.fillText(title, 110, 22);
+    ctx.stroke();
+    ctx.restore();
+    ctx.save();
 
-	ctx.font = '22px courier';
-	ctx.fontWeight = "bold";
-	ctx.textAlign = "center";
-	ctx.fillStyle = "red";
-	ctx.fillText("新手专享", 150, 15);
-	ctx.stroke();
-	ctx.restore();
-	ctx.save();
-	
-	ctx.beginPath();
+    //画名称
+    ctx.font = '20px courier';
+    ctx.textBaseline = 'hanging';
+    ctx.fontWeight = "lighter";
+    var name = name;
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#ec6d65";
+    ctx.fillText(name, 182, 20);
+    ctx.stroke();
+    ctx.restore();
+    ctx.save();
+    
 
-	var gradient = ctx.createLinearGradient(0, 0, bg.width * 0.8, 0);
+    //进度
+    ctx.font = '15px courier';
+    ctx.textBaseline = 'hanging';
+    ctx.fontWeight = "lighter";
+    var text1 = "进度: ";
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#595757";
+    ctx.fillText(text1, 125, 60);
+    ctx.stroke();
+    ctx.restore();
+    ctx.save();
 
-	gradient.addColorStop("0.1", "#f9d8d8");
-	gradient.addColorStop("0.3", "#f4b2aa");
-	gradient.addColorStop("0.6", "#f0968d");
-	gradient.addColorStop("1", "#eb6d65");
-	// 用渐变进行填充
-	ctx.strokeStyle = gradient;
+    //百分比parseInt(current * 100) 
+    ctx.font = '25px Arial';
+    ctx.textBaseline = 'hanging';
+    ctx.fontWeight = "lighter";
+    var bai = parseInt(current * 100) + "%";
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#595757";
+    ctx.fillText(bai, 170, 53);
+    ctx.stroke();
+    ctx.restore();
+    ctx.save();
 
-	ctx.lineWidth = 30;
-	ctx.arc(150, 0, 100, pi, (1-current)*pi, true);
 
-	ctx.stroke();
-	ctx.restore();
+    //画弧线
+    ctx.beginPath();
+    var gradient = ctx.createLinearGradient(0, 0, bg.width * 0.8, 0);
+    gradient.addColorStop("0.1", "#f9d8d8");
+    gradient.addColorStop("0.3", "#f4b2aa");
+    gradient.addColorStop("0.6", "#f0968d");
+    gradient.addColorStop("1", "#eb6d65");
+    ctx.strokeStyle = gradient;
+    ctx.lineWidth = 20;
+    ctx.arc(150, 0, 100, pi, (1 - current) * pi, true);
+    ctx.stroke();
+    ctx.restore();
+    ctx.save();
+
 
 }
+/**
+ * 
+ * @param {*} now 当前百分比
+ * @param {*} title 优选计划
+ * @param {*} name 供应链包
+ */
+function loadCanvas(now, title, name) {
+    var t = 0;
+    var timer = null;
+    timer = setInterval(function() {
+        ctx.clearRect(0, 0, bg.width, bg.height);
+        if (t >= now) {
+            draw(now, title, name); //最后一次绘制
+            clearInterval(timer);
+        } else {
+            draw(t, title, name);
 
-function loadCanvas(now) {
-	var t = 0;
-	var timer = null;
-	timer = setInterval(function() {
-		ctx.clearRect(0, 0, bg.width, bg.height);
-		if(t >= now) {
-			draw(now); //最后一次绘制
-			clearInterval(timer);
-		} else {
-			draw(t);
-
-			t += 0.01;
-		}
-	}, 10);
+            t += 0.01;
+        }
+    }, 10);
 }
-loadCanvas(1);

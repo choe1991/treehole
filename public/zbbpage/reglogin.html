@@ -34,6 +34,7 @@
 	<link href="css/login.css" rel="stylesheet">
 	<link href="css/index.css" rel="stylesheet">
 	<link href="css/reg.css" rel="stylesheet">
+	<link href="css/c_list.css" rel="stylesheet">
 </head>
 
 <body class="scope">
@@ -42,7 +43,7 @@
       <nav class="header">
       	<!--<div class="top"></div>-->
       	  <div class="head">
-                 <a class="return" href="#"><i class="am-icon-angle-left"></i></a>
+                 <a class="return" href="#" onclick="history.go(-1)"><i class="am-icon-angle-left"></i></a>
                  <span>个人注册</span>
             </div>
       </nav>
@@ -80,6 +81,7 @@
                          <div class="am-form-group">
                              <input type="text" placeholder="请输入密码" class="tl"/>
                          </div>
+                         <p class="clear fc">请输入正确的密码</p>
                      </li>
                   
                     <li class="num_list">
@@ -87,9 +89,15 @@
                          <div class="am-form-group">
                              <input type="text" placeholder="请再次输入密码" class="tl"/>
                          </div>
+                         <p class="clear fc">密码输入不一致</p>
                      </li>
                  </ul>
-                 <input type="submit" class="lanch" value="下一步" onclick="javascript:window.location.href='certification.html'"/>
+             
+                <div class="detail-lj">
+				<div class="wrp" onclick="javascript:window.location.href='certification.html'">
+					<div class="btn">下一步</div>
+     		  </div>
+			</div>
               
         </div>
 </div>
@@ -97,9 +105,9 @@
 	<footer class="footer">
         <nav>
             <ul>
-                <li><a href="index.html" class="nav-controller active"><div class="fb-home"></div>主页</a></li>
+                <li><a href="index.html" class="nav-controller"><div class="fb-home"></div>主页</a></li>
                 <li><a href="list.html" class="nav-controller"><div class="fb-group"></div>优质资产</a></li>
-                <li class="left"><a href="login.html" class="nav-controller "><div class="fb-list"></div>我的账户</a></li>
+                <li class="left"><a href="login.html" class="nav-controller active"><div class="fb-list"></div>我的账户</a></li>
             </ul>
         </nav>
     </footer>

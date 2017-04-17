@@ -1,14 +1,30 @@
+index2.html——主页大框架
 
 index.html——主页
 login.html——登录
-wjpwd.html -- 找回密码
-password.html -- 重置密码
 register.html——注册
-reglogin.html -- 设置登录密码
-certification.html -- 实名认证
-successcation.html -- 用户注册信息
-successqr.html -- 用户注册成功
-agreement.html-- 用户协议
-list.html——资产列表
-detail.html——资产详情
 
+bidList.html——标列表
+bidDetail.html——标详情
+bidBuy.html——立即抢购（投资）
+bid_agreement.html——电子协议
+bidDetail_M1.html——产品介绍
+bidDetail_M2.html——安全保障
+bidDetail_M3.html——支持银行
+bidDetail_M4.html——购买记录
+
+searchList.html——发现列表
+
+myUser.html——个人账户中心
+invest_Recd.html——投资记录
+fund_Recd——资金记录
+myBag.html——我的红包
+my_msg.html——我的消息
+message.html——消息详情
+fund_Recd——资金记录
+pay.html——充值
+pay_rule.html——充值规则
+cash.html——取现
+cash_rule.html——取现规则
+
+tabs.html——底部导航区页面

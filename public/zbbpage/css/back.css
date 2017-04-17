@@ -1,0 +1,69 @@
+.back{
+ 	border-bottom: 1px solid #CCCCCC;
+ }
+ .back .back-wrapper{
+ 	border: 1px dashed #CCCCCC; width: 80%; margin: 0 auto; margin-top: 20px;
+ }
+ .back .back-wrapper .impt{
+ 	width: 120px; margin:  10px auto;
+ }
+  .back .back-wrapper .tj-img{
+ 	width: 31px;
+ 	height: 31px;
+ 	margin:  40px auto;
+ 	    display: block;
+ }
+.back .back-wrapper .title{
+ 	text-align: center;height: 45px;line-height: 35px; font-size: 16px;
+ }
+ .back .card{
+ 	width: 80%;
+ 	display: flex;
+ 	margin: 0 auto;
+ 	margin: 10px 10px;
+ }
+ .back .card .number{
+ 	text-align: center;
+ 	flex: 1;
+ 	font-size: 16px;
+ 	line-height: 45px;
+ }
+ .tjia{
+ 	flex: 1;
+ 	margin-left: 80px;
+ }
+ .back .card .del{
+ 	flex: 0 0 20%;
+ 	margin-right: -20px;
+ }
+ .wrp{
+ 	border: 1px solid #eb6d65;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 8px;
+ }
+ .wrp .btn {
+    background-color: #eb6d65;
+    margin: 4px;
+    color: #FFFFFF;
+    border-radius: 8px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+
+.regcon .num .num_list .sel-form-group{
+	  display: inline-block; 
+	  width: 70%;
+      margin: 0;
+     
+      
+}
+.regcon .num .num_list .sel-form-group .t2{
+	    width: 49%;
+	    border: 1px solid #999;
+	padding-left: 10px;
+	height: 40px;
+	line-height: 40px;
+	    border-radius: 8px;
+}

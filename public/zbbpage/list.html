@@ -1,4 +1,5 @@
-﻿<html>
+﻿<!DOCTYPE HTML>
+<html>
 	<head>
 		<title>项目列表</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
@@ -7,175 +8,197 @@
 		<link href="css/login.css" rel="stylesheet">
 		<link href="css/index.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/c_list.css"/>
-		<link rel="stylesheet" type="text/css" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
 		<script src="js/jquery.min.js"></script>
+		<script src="js/iscroll.js"></script>
+		 <script type="text/javascript">
+            var myScroll,
+            pullUpEl, pullUpOffset,
+            generatedCount = 0;
+            function pullUpAction () {
+                setTimeout(function () {	
+                    var el, li, i;
+                    el = document.getElementById('thelist');
+
+                    for (i=0; i<3; i++) {
+                        li = document.createElement('li');
+                        li.innerText = 'Generated row ' + (++generatedCount);
+                        el.appendChild(li, el.childNodes[0]);
+                    }
+                    myScroll.refresh();	
+                }, 1000);	
+            }
+
+            function loaded() {
+                pullUpEl = document.getElementById('pullUp');	
+                pullUpOffset = pullUpEl.offsetHeight;
+                myScroll = new iScroll('wrapper', {
+                    useTransition: true,
+                    onRefresh: function () {                 
+                        if (pullUpEl.className.match('正在加载中....')) {
+                            pullUpEl.className = '';
+                            pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+                        }
+                    },
+                    onScrollMove: function () {
+                        if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+                            pullUpEl.className = 'flip';
+                            pullUpEl.querySelector('.pullUpLabel').innerHTML = '刷新中...';
+                            this.maxScrollY = this.maxScrollY;
+                        } else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+                            pullUpEl.className = '';
+                            pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+                            this.maxScrollY = pullUpOffset;
+                        }
+                    },
+                    onScrollEnd: function () {
+                        if (pullUpEl.className.match('flip')) {
+                        	
+//                      	
+                            pullUpEl.className = 'loading';
+                            pullUpEl.querySelector('.pullUpLabel').innerHTML = '<span>-</span>正在加载中...';				
+                            pullUpAction();	 //ajax请求数据
+                        }
+                    }
+                });
+	
+                setTimeout(function () { document.getElementById('wrapper').style.left = '0'; }, 800);
+            }
+
+            document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+            document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+        </script>
+		
 	</head>
-	<body class="scope">
+	<body class="scope" style="background-color: #c9c9ca;">
 	<div class="login">
 		<!--头部 start-->
       <nav class="header">
-      <!--	<div class="top"></div>-->
       	  <div class="head">
-                 <a class="return" href="#" style="margin-top: 8px;"><i class="am-icon-angle-left"></i></a>
                  <span>资产列表</span>
             </div>
       </nav>
       <!--头部 end-->
+      <div id="wrapper">
 		<div id="c_content">
-			<ul class="index_list">
+			<ul class="index_list" id="thelist">
 				<li>
 					<div class="item_head">
 						<div class="title">
-							新手专享
+							<span class="tf-p1">优选计划</span>
+							<span class="tf-p2">供应链包</span>
 						</div>
-
-						<div class="nos">
-
-						</div>
-
 						<div class="mission">
-							○专享加息奖励
+							<span class="tf-p3">0001期</span>
 						</div>
 					</div>
-					<div class="item_content">
-						<div class="ic_left">
-							<div class="cvs" data-baifenbi='1'>
-							</div>
-							
-							<div class="sss">
-								<span>
-									年化率
-								</span>
-								<div class="nhl">
-									13.20%
-								</div>
-							</div>
+					<div class="ch-list">
+						<div class="jdcavn" data-baifenbi="0.5"></div>
+						<div class="ch-bf">
+							<span class="ch-yq">预期年化:</span>
+							<span class="ch-name">8.35<span class="size">%</span></span>
 						</div>
-						<div class="ic_center">
-							<p class="all">
-
-								<span>★</span>
-
-								<span>★</span>
-
-								<span>★</span>
-
-								<span>★</span>
-
-								<span class="unshine">★</span>
-
-							</p>
-							
-							<div class="gmrs">
-								购买人数：170人
-							</div>
-							<div class="baozhang">
-								多重保障
-							</div>
+					</div>
+					
+					<div class="ze-list">
+						<div class="title">
+							<div class="total">发售总额：<span>2000000.00元 </span></div>
+							<div class="data">产品期限：<span>3个月</span></div>
 						</div>
-						<div class="ic_right">
-							<div class="wdx">
-								稳定性
-							</div>
-							<div class="sdsj">
-								锁定时间：3个月
-							</div>
-							<div class="tcfs">
-								每月分红到期回本
-							</div>
-							<div class="ljgm" onclick="javascript:window.location.href='detail.html'">
-								<button type="button" class="btn btn-danger">立即购买</button>
-							</div>
+						<div class="ze-btn" onclick="javascript:window.location.href='details.html'">
+							<div class="wrp">
+     							<div class="btn">立即购买</div>
+     				     	</div>
 						</div>
-
 					</div>
 				</li>
+				
 				<li>
 					<div class="item_head">
 						<div class="title">
-							新手专享
+							<span class="tf-p1">优选计划</span>
+							<span class="tf-p2">车押包</span>
 						</div>
-
-						<div class="nos">
-
-						</div>
-
 						<div class="mission">
-							○专享加息奖励
+							<span class="tf-p3">0001期</span>
 						</div>
 					</div>
-					<div class="item_content">
-						<div class="ic_left">
-							<div class="cvs" data-baifenbi='0.6'>
-							</div>
-							
-							<div class="sss">
-								<span>
-									年化率
-								</span>
-								<div class="nhl">
-									13.20%
-								</div>
-							</div>
+					<div class="ch-list">
+						<div class="jdcavn" data-baifenbi="1"></div>
+						<div class="ch-bf">
+							<span class="ch-yq">预期年化:</span>
+							<span class="ch-name">8.35<span class="size">%</span></span>
 						</div>
-						<div class="ic_center">
-							<p class="all">
-
-								<span>★</span>
-
-								<span>★</span>
-
-								<span>★</span>
-
-								<span>★</span>
-
-								<span class="unshine">★</span>
-
-							</p>
-							
-							<div class="gmrs">
-								购买人数：170人
-							</div>
-							<div class="baozhang">
-								多重保障
-							</div>
+					</div>
+					
+					<div class="ze-list">
+						<div class="title">
+							<div class="total">发售总额：<span>2000000.00元 </span></div>
+							<div class="data">产品期限：<span>3个月</span></div>
 						</div>
-						<div class="ic_right">
-							<div class="wdx">
-								稳定性
-							</div>
-							<div class="sdsj">
-								锁定时间：3个月
-							</div>
-							<div class="tcfs">
-								每月分红到期回本
-							</div>
-							<div class="ljgm" onclick="javascript:window.location.href='detail.html'">
-								<button type="button" class="btn btn-danger">立即购买</button>
-							</div>
+						<div class="ze-btn">
+							<div class="wrp-disable">
+     							<div class="btn-disable">已售馨</div>
+     				     	</div>
 						</div>
-
 					</div>
 				</li>
+				
+				<li>
+					<div class="item_head">
+						<div class="title">
+							<span class="tf-p1">优选计划</span>
+							<span class="tf-p2">企业包</span>
+						</div>
+						<div class="mission">
+							<span class="tf-p3">0001期</span>
+						</div>
+					</div>
+					<div class="ch-list">
+						<div class="jdcavn" data-baifenbi="0.1"></div>
+						<div class="ch-bf">
+							<span class="ch-yq">预期年化:</span>
+							<span class="ch-name">8.35<span class="size">%</span></span>
+						</div>
+					</div>
+					
+					<div class="ze-list">
+						<div class="title">
+							<div class="total">发售总额：<span>2000000.00元 </span></div>
+							<div class="data">产品期限：<span>3个月</span></div>
+						</div>
+						<div class="ze-btn">
+							<div class="wrp" onclick="javascript:window.location.href='details.html'">
+     							<div class="btn">立即购买</div>
+     				     	</div>
+						</div>
+					</div>
+			</li>
 			</ul>
+			<div id="pullUp">
+                    <span class="pullUpLabel">加载更多</span>
+            </div>
 		</div>
-		<div id="c_foot">
-
-		</div>
-		</div>
-		<!--底部 start-->
+	</div>
+</div>
+	<!--底部 start-->
 	<footer class="footer">
         <nav>
             <ul>
-                <li><a href="index.html" class="nav-controller active"><div class="fb-home"></div>主页</a></li>
-                <li><a href="list.html" class="nav-controller"><div class="fb-group"></div>优质资产</a></li>
+                <li><a href="index.html" class="nav-controller"><div class="fb-home"></div>主页</a></li>
+                <li><a href="list.html" class="nav-controller  active"><div class="fb-group"></div>优质资产</a></li>
                 <li class="left"><a href="login.html" class="nav-controller "><div class="fb-list"></div>我的账户</a></li>
+                
+                
             </ul>
         </nav>
     </footer>
 <!--底部 end-->
+
+
+
 	</body>
 	
-	<script src="js/c_loading1.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/c_loading.js"></script>
 
 </html>

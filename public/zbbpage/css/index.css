@@ -8,7 +8,7 @@ body{
     background-color: #fff;
         padding-bottom: 10px;
       }
-      .header{position: relative; top: 0; left: 0;width: 100%;}
+      .header{position: relative; top: 0; left: 0;width: 100%;    z-index: 999;}
       .header .top{
       	height: 24px;
       	background-color: #eb6d65;
@@ -21,7 +21,7 @@ body{
       	
       }
       .header .wrapper .cen{
-      	width: 80%;
+      	width: 90%;
       	margin: 0 auto;
       }
      .header .wrapper .cen img{
@@ -43,7 +43,7 @@ body{
       
       .footer {
     width: 100%;
-    max-width: 640px;
+   /* max-width: 640px;*/
     height: 65px;
     position: fixed;
     bottom: 0;
@@ -86,7 +86,7 @@ body{
 .fb-group,
 .fb-list,
 .fb-user{
-    background-image: url("../img/footer-icon.png");
+    background-image: url("../img/f-icon.png");
     background-repeat: no-repeat;
     background-size: 30px auto;
     height: 31px;
@@ -94,12 +94,12 @@ body{
     width: 30px;
     background-position: 0px 4px;
 }
-.fb-home{ background-position: 0px -124px;}
-.active .fb-home { background-position: 0px 0;}
-.fb-group { background-position: 0px -156px;}
-.active .fb-group { background-position: 0px -31px;}
-.fb-list { background-position: 0px -187px;}
-.active .fb-list { background-position: 0px -62px;}
+.fb-home{background-position: 0px -91px;}
+.active .fb-home {background-position: 0px 3px;}
+.fb-group {background-position: 0px -119px;}
+.active .fb-group {background-position: 0px -26px;}
+.fb-list {background-position: 0px -151px;}
+.active .fb-list {background-position: 0px -56px;}
 .fb-user { background-position: 0px -218px;}
 .active .fb-user { background-position: 0px -92px;}
 
@@ -124,10 +124,11 @@ body{
 /*主体*/
 .main{
 	width: 100%;	
+	    margin-bottom: 70px;
 }
 .main .hcave{
-	height: 150px;
-	margin-top: 20px;
+	/*height: 150px;
+	margin-top: 20px;*/
 }
 .main .hcave .fred{display: block; font-size: 30px;width: 150px; margin: 0 auto; color: #eb6d65;  border: 1px solid #FFFFFF; border-top-color: #fbe4e7;border-bottom-color: #fbe4e7;}
 .main .hcave .fbfb{display: block; font-size: 16px; color: #585858; text-align: center; margin-top: 15px;}
@@ -135,16 +136,17 @@ body{
 	font-weight: bold;
 }
 .main .m-bot {
-	margin: 0 30px;
+	    margin: 0 20px;
 }
 .main .m-bot .bone{
-	border:1px solid #c8c9ca;
-	display: inline-block;
-	border-radius: 5px;
-	width: 65px;
-	text-align: center;
-	margin-bottom: 20px;
-	height: 25px;
+	border: 1px solid #c8c9ca;
+    display: inline-block;
+    border-radius: 5px;
+    margin-left: 30px;
+    /*padding: 2px;*/
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
 }
 .main .m-bot .test_box {
     display: -moz-box; 
@@ -169,14 +171,30 @@ body{
     box-flex: 2;
     text-align: center;
 }
+.test{
+	 margin: 0 auto;
+}
+.main .m-bot .list{
+    margin: 0 auto;
+    border-bottom: 1px solid #c9c9ca;
+}
 .line{
 	margin:0px;height:1px;border:0px;background-color:#D5D5D5;color:#D5D5D5;
 }
-.main .m-bot .list_two .number{
-	color: #eb6d65; 
-	font-size: 40px; 
+
+.main .m-bot .list .number{
+	 color: #eb6d65;
+    font-size: 40px;
+    display: inline-block;
+    /* margin-left: 13px; */
+    /* margin-right: 30px; */
+    width: 50%;
+    text-align: center;
+}
+.main .m-bot .list .xsize{
 	display: inline-block;
-	margin-left: 13px;
+	font-size: 14px;
+	line-height: 40px;
 }
 .main .m-bot .list_two .number .bfb{
 	margin-left: 5px;
@@ -212,7 +230,7 @@ border: 10px solid;
 border-color: #eb6d65 transparent transparent #eb6d65;
 }
 .mg{
-	margin-top: 20px;
+	margin: 30px 0;
 }
 .mg .left-line{display: inline-block;width: 10%;border: 1px solid #e4dfe2;}
 .mg .con-title{display: inline-block; width: 20%; text-align: center;color: #eb6d65; padding-bottom: 15px; border-bottom: 3px solid #e4dfe2; -webkit-border-bottom-left-radius: 100%;
@@ -228,23 +246,49 @@ border-color: #eb6d65 transparent transparent #eb6d65;
 .jl{
 	margin-right: 10px;
 }
-.jl .title{
+.jl .t{
+	 margin-bottom: 5px; text-align: left;
+}
+.jl .t .title-bg{
+	 background-color: #ec6e65;
+	 text-align: left;
+	 color: #fff;
+	font-size: 12px;
+	padding: 2px;
+	border-radius: 3px;
+	display: inline-block;
+}
+.jl .t .title{
 	font-size: 15px;
-	display: block;
-	margin-bottom: 5px;
+	display: inline-block;
+}
+.jl .t .title-qs{
+	font-size: 12px;
+	display: inline-block;
 }
 .jl .project{
-	border: 1px solid #CCCCCC; border-top-width: 5px;
+	border: 1px solid #CCCCCC;
+	 border-top-width: 5px;
 	border-bottom-color: #FFFFFF;
 }
 .jl .project .bf-t1{
-	display: block; font-size: 20px;
+	width: 50%;
+	display: inline-block;
+	 font-size: 20px;
+	 vertical-align: middle;
 }
 .jl .project .bf-t2{
+	width: 20%;
 	font-size: 10px;
 	display: inline-block;
+	vertical-align: middle;
 }
-.jl .project .bf-img{
+.jl .project .bf-t3{
+	width: 20%;
+	display: inline-block;
+	vertical-align: middle;
+}
+.jl .project .bf-t3 .bf-img{
 	display: inline-block;
 	width: 23px; 
 	height: 23px;
@@ -324,6 +368,22 @@ border-color: #eb6d65 transparent transparent #eb6d65;
     top: 34px;
     border: 5px solid;
     border-color: #eb6d65 transparent transparent #eb6d65;
+}
+.main .m-bot {
+    margin: 0 11px;
+}
+.main .m-bot .list .xsize {
+    font-size: 12px;
+    line-height: 30px;
+}
+.main .m-bot .list .number {
+    font-size: 37px;
+}
+.jl .project .bf-t1 {
+    font-size: 18px;
+}
+.jl .t .title {
+    font-size: 13px;
 }
 }
 @media screen and (min-width: 320px) and (max-width: 359px) {
@@ -411,6 +471,22 @@ border-color: #eb6d65 transparent transparent #eb6d65;
     top: 34px;
     border: 5px solid;
     border-color: #eb6d65 transparent transparent #eb6d65;
+}
+.main .m-bot {
+    margin: 0 11px;
+}
+.main .m-bot .list .xsize {
+    font-size: 12px;
+    line-height: 30px;
+}
+.main .m-bot .list .number {
+    font-size: 37px;
+}
+.jl .project .bf-t1 {
+    font-size: 18px;
+}
+.jl .t .title {
+    font-size: 13px;
 }
 }
 
@@ -500,6 +576,22 @@ border-color: #eb6d65 transparent transparent #eb6d65;
     top: 34px;
     border: 5px solid;
     border-color: #eb6d65 transparent transparent #eb6d65;
+}
+.main .m-bot {
+    margin: 0 11px;
+}
+.main .m-bot .list .xsize {
+    font-size: 12px;
+    line-height: 30px;
+}
+.main .m-bot .list .number {
+    font-size: 37px;
+}
+.jl .project .bf-t1 {
+    font-size: 18px;
+}
+.jl .t .title {
+    font-size: 13px;
 }
 }
 @media screen and (min-width: 375px) and (max-width: 383px) {

@@ -28,11 +28,33 @@
   <!-- windows phone 点击无高光 -->
   <meta name="msapplication-tap-highlight" content="no">
 
-	<title>猪宝宝-我的账户</title>
+	<title>我的账户</title>
 	<link rel="stylesheet" type="text/css" href="css/amazeui.css">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/login.css" rel="stylesheet">
 	<link href="css/index.css" rel="stylesheet">
+	<link href="css/account.css" rel="stylesheet">
+	<link href="css/c_list.css" rel="stylesheet">
+	<style>
+		 .acTable{
+    	padding: 10px 20px;
+    }
+    .acTable table {
+    width: 100%;
+    text-align: center;
+    border-right:1px solid #676666;
+    border-bottom:1px solid #676666;
+    color: #6c6c6c;
+    font-size: 14px;
+}
+ .acTable table td {
+ 	border-left:1px solid #676666;
+ 	border-top:1px solid #676666;
+    line-height: 2.5em;
+    text-align: center;
+}
+
+	</style>
 </head>
 
 <body class="scope">
@@ -41,23 +63,142 @@
       <nav class="header">
       	<!--<div class="top"></div>-->
       	  <div class="head">
-                 <a class="return" href="#"><i class="am-icon-angle-left"></i></a>
+      	  	 <a class="return" href="#" onclick="history.go(-1)"><i class="am-icon-angle-left"></i></a>
                  <span>我的账户</span>
             </div>
       </nav>
       <!--头部 end-->
       <div class="account">
       	<div class="account-wrapper">
-      		<div class="avatatr"></div>
+      		<div class="avatatr">
+      			<div class="sctp">
+      				<img src="img/txbg.png"/>
+      				
+      			</div>
+      			<p>点击设置头像</p>
+      		</div>
       		<div class="content">
-      			<div class="username"></div>
-      			<div class="totalmoney"></div>
-      			<div class="lxmoney"></div>
-      			<div class="balance"></div>
+      			<div class="username">
+      				<span class="brand"></span>
+      				<span class="name">路边蹲一郎</span>
+      			</div>
+      			<div class="totalmoney">
+      				<span class="name">累计总收益</span>
+      				
+      			</div>
+      			<div class="totalmoney">
+      				<span class="name">待回收收益 </span>
+      				
+      			</div>
+      			
+      			<div class="totalmoney">
+      				<span class="name">持有本金 </span>
+      				
+      			</div>
+      			<div class="totalmoney">
+      				<span class="name">提现总额 </span>
+      				
+      			</div>
+      		</div>
+      		<div class="content-money">
+      			<div class="totalmoney">
+      				<span class="money">100.00元</span>
+      			</div>
+      			<div class="totalmoney">
+      				<span class="money">100.00元</span>
+      			</div>
+      			
+      			<div class="totalmoney">
+      				<span class="money">100.00元</span>
+      			</div>
+      			<div class="totalmoney">
+      				<span class="money">100.00元</span>
+      			</div>
       		</div>
       	</div>
+      	<div class="acTable">
+				<table border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                  <td>待回收金额</td>
+                                  <td>0.00元</td>
+                              </tr>
+                               <tr>
+                                  <td>锁定金额  </td>
+                                  <td>0.00元</td>
+                              </tr>
+                               <tr style="color: #EC6D65;">
+                                  <td>可用余额 </td>
+                                  <td> 250000.00元</td>
+                              </tr>
+                               <tr>
+                                  <td>合计：账户总额 </td>
+                                  <td>250000.00元</td>
+                              </tr>
+                              
+                            
+                </table>
+			</div>
+      	
+      
+      	<div class="zc-lj">
+				<div class="wrp" onclick="javascript:window.location.href='withdraw.html'">
+					<div class="btn">提现</div>
+     		 </div>
+				<div class="wrp" onclick="javascript:window.location.href='recharge.html'">
+					<div class="btn">充值</div>
+     		 </div>
+			</div>
+      	
+      	
+      	<div class="detail" style="margin-bottom: 20px;">
+				<div class="d-wrapper">
+					<a href="setup.html">
+						<span class="title">自动购买设置</span>
+						<img src="img/r0.png" class="icon"/>
+					</a>
+				</div>
+				<p>设置自动购买功能可享<span style="color: #ec6e65;">0.5%年化收益奖励</span></p>
+				<div class="d-wrapper">
+					<a href="hsback3.html">
+						<span class="title">待回收产品</span>
+						<img src="img/r0.png" class="icon"/>
+					</a>
+				</div>
+				<div class="d-wrapper">
+					<a href="hsback2.html">
+						<span class="title">交&nbsp;&nbsp;易&nbsp;&nbsp;&nbsp;记&nbsp;录</span>
+						<img src="img/r0.png" class="icon"/>
+					</a>
+				</div>
+				<div class="d-wrapper">
+					<a href="hsback1.html">
+						<span class="title">回收资产查询</span>
+						<img src="img/r0.png" class="icon"/>
+					</a>
+				</div>
+				
+				<div class="d-wrapper">
+					<a href="accountgl.html">
+						<span class="title">账&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;管&nbsp;理</span>
+						<img src="img/r0.png" class="icon"/>
+					</a>
+				</div>
+			</div>
+      	
       </div>
+     
        
 </div>
+<!--底部 start-->
+	<footer class="footer">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-controller "><div class="fb-home"></div>主页</a></li>
+                <li><a href="list.html" class="nav-controller"><div class="fb-group"></div>优质资产</a></li>
+                <li class="left"><a href="login.html" class="nav-controller active"><div class="fb-list"></div>我的账户</a></li>
+            </ul>
+        </nav>
+    </footer>
+<!--底部 end-->
 </body>
 </html>

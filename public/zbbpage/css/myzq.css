@@ -1,0 +1,81 @@
+#trip_order .nav {
+    background-color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+#trip_order .nav a {
+    display: block;
+    line-height: 40px;
+    font-size: 14px;
+    position: relative;
+    bottom: -1px;
+}
+#trip_order .nav a.cur {
+    color: #eb6d65;
+    border-bottom: 3px solid #eb6d65;
+}
+#trip_order  .a-list{
+	 background-color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+#trip_order .a-list span {
+    display: block;
+    line-height: 40px;
+    font-size: 14px;
+    position: relative;
+    bottom: -1px;
+}
+#trip_order .a-list a {
+    display: block;
+    font-size: 14px;
+    position: relative;
+    bottom: 5px;
+}
+#trip_order .a-list a:hover {
+   color: #eb6d65;
+}
+
+@media screen and (max-width: 319px) {
+ #trip_order .a-list span {
+    line-height: 30px;
+    font-size: 12px;
+}
+#trip_order .a-list a {
+    display: block;
+    font-size: 12px;
+}
+
+}
+@media screen and (min-width: 320px) and (max-width: 359px) {
+	#trip_order .a-list span { 
+	    line-height: 30px;
+	    font-size: 12px;
+}
+#trip_order .a-list a {
+    display: block;
+    font-size: 12px;
+}
+}
+@media screen and (min-width: 360px) and (max-width: 374px) {
+	#trip_order .a-list span {
+	     line-height: 30px;
+	    font-size: 12px;
+}
+#trip_order .a-list a {
+    display: block;
+    font-size: 12px;
+}
+}
+@media screen and (min-width: 375px) and (max-width: 383px) {
+	#trip_order .a-list span {
+	    line-height: 30px;
+	    font-size: 12px;
+}
+#trip_order .a-list a {
+    display: block;
+    font-size: 12px;
+}
+}

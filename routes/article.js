@@ -1,4 +1,5 @@
 var express = require('express');
+var jwt = require('jsonwebtoken');
 var router = express.Router();
 var db = require('./db.js');
 /* GET home page. */
@@ -31,6 +32,9 @@ router.get('/rand', function(req, res, next) {
  * post方法是                 req.body
  */
 router.get('/', function(req, res, next) {
+    var token = req.headers.authorization;
+    var decoded = jwt.verify("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNDkyNDIyNzQzfQ.3hetfEnTei0w83wZrQjoGrQ2slP-iYpJ0yiF3711U3E", "secret");
+    console.log(decoded);
     if (req.query.pageindex == null) {
         var pageindex = 1;
     } else {
@@ -38,11 +42,11 @@ router.get('/', function(req, res, next) {
     }
     var startItem = (pageindex - 1) * 16;
 
-    db.query('select ta.id,h.headimg,h.zhName,ta.content,ta.time,ta.userid from heros as h,treehole_article as ta,treehole_user as tu where ta.userid = tu.id and tu.heroid  = h.id ORDER BY ta.time DESC limit ' + startItem + ',16', function(err, rows) {
+    db.query('SELECT ta.id , h.headimg , h.zhName , ta.content , ta.time , ta.userid , IFNULL(b.sss , 0) AS comments_count , IFNULL(c.ccc , 0) AS likes_count FROM( heros AS h , treehole_article AS ta , treehole_user AS tu) LEFT JOIN( SELECT count(id) AS sss , articleid FROM treehole_comment GROUP BY articleid) b ON(b.articleid = ta.id) LEFT JOIN( SELECT count(id) AS ccc , article_id FROM treehole_like GROUP BY article_id) c ON(c.article_id = ta.id) WHERE ta.userid = tu.id AND tu.heroid = h.id GROUP BY ta.id ORDER BY ta.time DESC LIMIT ' + startItem + ',16', function(err, rows) {
         if (err) {
-            res.send({ title: 'heros', datas: [] });
+            res.send({ datas: [] });
         } else {
-            res.send({ title: 'heros', datas: rows });
+            res.send({ datas: rows });
         }
     })
 });
@@ -81,14 +85,19 @@ router.get("/getComments", function(req, res, next) {
 router.post('/like', function(req, res, next) {
         var article_id = req.body.article_id;
         var userid = req.session.userid;
-        var sql = "insert into treehole_like (userid,article_id) values('" + userid + "','" + article_id + "')";
-        db.query(sql, function(err, row) {
-            if (article_id == null || userid == null || err) {
-                res.send({ result: -1 });
-            } else {
-                res.send({ result: 0 });
-            }
-        })
+        if (req.session.userid == null || req.session.userid == undefined) {
+            res.send({ result: -2 });
+        } else {
+            var sql = "insert into treehole_like (userid,article_id) values('" + userid + "','" + article_id + "')";
+            db.query(sql, function(err, row) {
+                if (article_id == null || userid == null || err) {
+                    res.send({ result: -1 });
+                } else {
+                    res.send({ result: 0 });
+                }
+            })
+        }
+
     })
     /**
      * 查看某篇文章
@@ -139,6 +148,38 @@ router.post('/addComment', function(req, res, next) {
         });
     }
 });
+
+
+// router.get("/token", function(req, res, next) {
+//     var result = getToken(setToken(1));
+//     console.log(result);
+//     res.send(result);
+// })
+
+// function setToken(userid) {
+//     var token = jwt.sign({
+//         exp: Math.floor(Date.now() / 1000) + 1,
+//         data: userid
+//     }, 'secret');
+//     console.log(token);
+//     return token
+// }
+
+// function getToken(token) {
+
+//     var result = jwt.verify(token, 'secret', function(err, decoded) {
+//         if (err) {
+//             console.log(err);
+//             return err
+//         } else {
+//             console.log(decoded.data);
+//             return decoded
+//         }
+//     });
+
+//     return result
+// }
+
 
 
 

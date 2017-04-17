@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div class="select">
+        产品期限范围在：
+        <select v-model="selected1">
+            <option v-for="item in options1" v-bind:value="item.value">{{item.text}}</option>
+            
+        </select> --
+        <select v-model="selected2">
+            <option v-if="item.value>=selected1" v-for="item in options2" v-bind:value="item.value">{{item.text}}</option>
+        </select>之间
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        var app = new Vue({
+            el: '.select',
+            data: {
+                message: 'Hello Vue!',
+                selected1: 0,
+                selected2: 0,
+                options1: [{
+                    text: '不限',
+                    value: 0
+                }, {
+                    text: '1个月',
+                    value: 1
+                }, {
+                    text: '2个月',
+                    value: 2
+                }, {
+                    text: '3个月',
+                    value: 3
+                }, {
+                    text: '4个月',
+                    value: 4
+                }, {
+                    text: '5个月',
+                    value: 5
+                }, {
+                    text: '6个月',
+                    value: 6
+                }, {
+                    text: '7个月',
+                    value: 7
+                }, {
+                    text: '8个月',
+                    value: 8
+                }, {
+                    text: '9个月',
+                    value: 9
+                }, {
+                    text: '10个月',
+                    value: 10
+                }, {
+                    text: '11个月',
+                    value: 11
+                }, {
+                    text: '12个月',
+                    value: 12
+                }],
+                options2: [{
+                    text: '不限',
+                    value: 0
+                }, {
+                    text: '1个月',
+                    value: 1
+                }, {
+                    text: '2个月',
+                    value: 2
+                }, {
+                    text: '3个月',
+                    value: 3
+                }, {
+                    text: '4个月',
+                    value: 4
+                }, {
+                    text: '5个月',
+                    value: 5
+                }, {
+                    text: '6个月',
+                    value: 6
+                }, {
+                    text: '7个月',
+                    value: 7
+                }, {
+                    text: '8个月',
+                    value: 8
+                }, {
+                    text: '9个月',
+                    value: 9
+                }, {
+                    text: '10个月',
+                    value: 10
+                }, {
+                    text: '11个月',
+                    value: 11
+                }, {
+                    text: '12个月',
+                    value: 12
+                }]
+            }
+        })
+    }
+</script>
+
+</html>
